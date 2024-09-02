@@ -4,7 +4,7 @@ import { Injectable } from '@nestjs/common';
 export class ProductService {
 
 getProducts(): string {
-    return 'TODOS LOS PRODUCTOS'
+    return 'TODOS LOS PRODUCTOS \n Proximamente subidos a la nube.'
 }
 
 }

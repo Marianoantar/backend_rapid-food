@@ -1,9 +1,11 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
 import { ConfigModel } from './interfaces/config';
 import { ConfigService } from './services/config.service';
+import { ApiTags } from '@nestjs/swagger';
 
 
 // CONFIG CONTROLLER
+@ApiTags('config')
 @Controller('config')
  export class ConfigController {
   constructor(private readonly configService: ConfigService) {}
