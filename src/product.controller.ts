@@ -8,7 +8,7 @@ export class ProductController {
 constructor(private productService: ProductService){}
 
 @Get()
- getProducts(): string {
+ async getProducts(): Promise<any> {
     return this.productService.getProducts();
  }
 
