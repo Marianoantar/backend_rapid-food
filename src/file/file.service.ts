@@ -4,7 +4,7 @@ import { Injectable } from '@nestjs/common';
 export class FileService {
 
     getHello(): string {
-        return 'Hello World!';
+        return 'Hello Fuking World!';
      }
     async saveFile(file: File): Promise<void> {
         // Implement file saving logic here

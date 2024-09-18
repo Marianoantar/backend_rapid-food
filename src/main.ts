@@ -6,8 +6,12 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import * as express from 'express';
 import { join } from 'path';
 
+
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+
+    // Usar el middleware estático de Express
+    app.use('/uploads', express.static(join(__dirname, '..', 'uploads')));
 
    // Habilitar CORS para todos los orígenes
    app.enableCors();
@@ -23,8 +27,7 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('documentation', app, document);
 
-  // Configura el middleware para servir archivos estáticos
-  app.use('/uploads', express.static(join(__dirname, '..', 'uploads')));
+
 
   await app.listen(3000);
 }

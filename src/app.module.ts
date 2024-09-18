@@ -12,14 +12,14 @@ import { FileService } from './file/file.service';
 import { MulterModule } from '@nestjs/platform-express';
 import { diskStorage } from 'multer';
 
-import { ServeStaticModule } from '@nestjs/serve-static';
-import { join } from 'path';
+// import { ServeStaticModule } from '@nestjs/serve-static';
+// import { join } from 'path';
 
 @Module({
   imports: [    
-    ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '..', 'uploads'),
-    }),
+    // ServeStaticModule.forRoot({
+      // rootPath: join(__dirname, '..', 'uploads'),
+    // }),
     MulterModule.register({
     storage: diskStorage({
       destination: './uploads',
