@@ -2,7 +2,7 @@
     {
         "id": 1,
         "nombre": "Pizzas",
-        "fotoUrl": "https://backend-rapid-food.onrender.com/img/Pizzas.jpg",
+        "fotoUrl": "../../../../assets/img/pizzas.jpg",
         "productos": [
             {
                 "id": 101,
@@ -63,7 +63,7 @@
     {
         "id": 2,
         "nombre": "Hamburguesas",
-        "fotoUrl": "https://backend-rapid-food.onrender.com/img/hamburguesas.avif",
+        "fotoUrl": "../../../../assets/img/hamburguesas.avif",
         "productos": [
             {
                 "id": 201,
@@ -152,7 +152,7 @@
     {
         "id": 3,
         "nombre": "Postres",
-        "fotoUrl": "https://backend-rapid-food.onrender.com/img/postre.jpg",
+        "fotoUrl": "../../../../assets/img/postre.jpg",
         "productos": [
             {
                 "id": 303,
@@ -173,13 +173,13 @@
     {
         "id": 4,
         "nombre": "Bebidas",
-        "fotoUrl": "http://localhost:3000/img/bebidas.webp",
+        "fotoUrl": "../../../../assets/img/bebidas.webp",
         "productos": []
     },
     {
         "id": 5,
         "nombre": "Combos",
-        "fotoUrl": "http://localhost:3000/img/combos.jpg",
+        "fotoUrl": "../../../../assets/img/combos.jpg",
         "productos": []
     },
     {
