@@ -1,6 +1,5 @@
-import { Body, Controller, Get, Post, Put } from '@nestjs/common';
+import { Controller, Get } from '@nestjs/common';
 import { AppService } from './services/app.service';
-import { ConfigService } from './services/config.service';
 
 
 @Controller()

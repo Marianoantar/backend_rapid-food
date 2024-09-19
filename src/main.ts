@@ -11,7 +11,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
     // Usar el middleware estático de Express
-    app.use('/uploads', express.static(join(__dirname, '..', 'uploads')));
+    app.use('/img', express.static(join(__dirname, '..', 'uploads')));
 
    // Habilitar CORS para todos los orígenes
    app.enableCors();
