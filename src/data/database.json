@@ -2,7 +2,7 @@
     {
         "id": 1,
         "nombre": "Pizzas",
-        "fotoUrl": "https://backend-rapid-food.onrender.com/img/pizzas.jpg",
+        "fotoUrl": "https://backend-rapid-food.onrender.com/img/Pizzas.jpg",
         "productos": [
             {
                 "id": 101,
