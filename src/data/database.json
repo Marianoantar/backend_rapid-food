@@ -185,7 +185,7 @@
     {
         "id": 6,
         "nombre": "Recomendados",
-        "fotoUrl": "http://localhost:3000/img/recomendados.jpg",
+        "fotoUrl": "../../../../assets/img/recomendados.jpg",
         "productos": []
     }
 ]
