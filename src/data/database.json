@@ -63,7 +63,7 @@
     {
         "id": 2,
         "nombre": "Hamburguesas",
-        "fotoUrl": "https://img.freepik.com/vector-gratis/hamburguesa-realista-sobre-fondo-pizarra_79603-1042.jpg?w=2000",
+        "fotoUrl": "https://backend-rapid-food.onrender.com/img/hamburguesas.avif",
         "productos": [
             {
                 "id": 201,
@@ -152,7 +152,7 @@
     {
         "id": 3,
         "nombre": "Postres",
-        "fotoUrl": "https://www.recetasnestle.com.ar/sites/default/files/2023-03/postre-en-vaso-dulce-leche.jpg.jpg",
+        "fotoUrl": "https://backend-rapid-food.onrender.com/img/postre.jpg",
         "productos": [
             {
                 "id": 303,
@@ -173,19 +173,19 @@
     {
         "id": 4,
         "nombre": "Bebidas",
-        "fotoUrl": "https://img.band.uol.com.br/image/2023/02/09/bebidas-alcoolicas-181014_800x450.webp",
+        "fotoUrl": "http://localhost:3000/img/bebidas.webp",
         "productos": []
     },
     {
         "id": 5,
         "nombre": "Combos",
-        "fotoUrl": "https://i-ticketing.iwos.com/1000x1000-th/products/220/products_220_2.png",
+        "fotoUrl": "http://localhost:3000/img/combos.jpg",
         "productos": []
     },
     {
         "id": 6,
         "nombre": "Recomendados",
-        "fotoUrl": "https://eldiariony.com/wp-content/uploads/sites/2/2023/06/shutterstock_521741356.jpg?resize=360,270&quality=80",
+        "fotoUrl": "http://localhost:3000/img/recomendados.jpg",
         "productos": []
     }
 ]
