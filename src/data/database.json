@@ -156,7 +156,7 @@
         "productos": [
             {
                 "id": 303,
-                "nombre": "Producto aaa",
+                "nombre": "Producto aaaa",
                 "precio": 0,
                 "esVegano": false,
                 "esCeliaco": false,
