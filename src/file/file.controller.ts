@@ -21,6 +21,10 @@ export class FileController {
 
   @Post('upload')
   @UseInterceptors(FileInterceptor('file'))
+    // ! FALTA METODO PARA SUBIR ARCHIVO
+    //* de todas formas esta subiendo la imagen por otro lado
+    //* a la carpeta project/uploads en vez de project/static/uploads 
+  
   uploadFile(@UploadedFile() file: Express.Multer.File) {
     console.log(file);
     return { 

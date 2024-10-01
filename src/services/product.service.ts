@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import { join } from 'path';
 import { findIndex } from 'rxjs';
 import { Producto_model } from 'src/interfaces/productos';
 
@@ -9,7 +10,8 @@ export class ProductService {
         const fs = require('fs');
 
         try {
-            const rawData = await fs.promises.readFile('./src/data/database.json', 'utf-8');
+            // const rawData = await fs.promises.readFile('./src/data/database.json', 'utf-8');
+            const rawData = await fs.promises.readFile(join(__dirname, '..', '/static/data/database.json'), 'utf-8');
             // Convierte la cadena JSON a un objeto
             const database = JSON.parse(rawData);
           
@@ -35,7 +37,9 @@ export class ProductService {
 
             // * borra producto y guardar
             database[indexCategory].productos = database[indexCategory].productos.filter(prod => prod.id !== idProduct);
-            await fs.promises.writeFile('./src/data/database.json', JSON.stringify(database), 'utf-8');
+            // await fs.promises.writeFile('./src/data/database.json', JSON.stringify(database), 'utf-8');
+            await fs.promises.writeFile(join(__dirname, '..', '/static/data/database.json'), JSON.stringify(database), 'utf-8');
+
 
             return {
                 "status": "success",
@@ -75,7 +79,8 @@ export class ProductService {
             // console.log('Productos después de agregar: ', productos.nombre);
 
             // * Guardar database
-            await fs.promises.writeFile('./src/data/database.json', JSON.stringify(database), 'utf-8');
+            await fs.promises.writeFile(join(__dirname, '..', '/static/data/database.json'), JSON.stringify(database), 'utf-8');
+            // await fs.promises.writeFile('./src/data/database.json', JSON.stringify(database), 'utf-8');
 
             return {
                 statusCode: 201,
@@ -92,9 +97,10 @@ export class ProductService {
     async put(id:number, product: Producto_model): Promise<any> {
         try {
             const idCategory = (id / 100) | 0;
-            console.log('id categoria: ', idCategory);
+            // console.log('id categoria: ', idCategory);
             const indexCategory = idCategory - 1;
-            console.log('index categoria: ', indexCategory);
+            // console.log('index categoria: ', indexCategory);
+            // console.log(__dirname);
 
             const fs = require('fs');
             let database = await this.getProducts();
@@ -103,8 +109,8 @@ export class ProductService {
             // console.log('array products: ',productos);
 
             const indice = productos.findIndex((p => p.id === id ));
-            console.log('indice del producto : ', indice);
-            console.log('producto A Modificar: ',productos[indice]);
+            // console.log('indice del producto : ', indice);
+            // console.log('producto A Modificar: ',productos[indice]);
             if (indice !== -1) {
                 productos.splice(indice, 1, product);
                 console.log('producto Modificado: ',productos[indice]);
@@ -117,19 +123,8 @@ export class ProductService {
             }
 
             database[indexCategory].productos = productos;
-            // console.log(database);
+            await fs.promises.writeFile(join(__dirname, '..', '/static/data/database.json'), JSON.stringify(database), 'utf-8');
 
-            await fs.promises.writeFile('./src/data/database.json', JSON.stringify(database), 'utf-8');
-
-            // const indiceProducto = this.productos.findIndex(p => p.id === this.producto.id);
-            // if (indiceProducto !== -1){
-            //   this.productos.splice(indiceProducto, 1, this.producto);
-            // }
-
-            // database.categorias[idCategory].products.push(product);
-            // database.categorias[idCategory].productos.push(product);
-            // await fs.promises.writeFile('./src/data/database.json', JSON.stringify(database), 'utf-8');
-    
             return {
                 statusCode: 201,
                 message: 'Recurso creado con éxito'

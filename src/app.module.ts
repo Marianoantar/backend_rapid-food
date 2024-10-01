@@ -11,6 +11,7 @@ import { FileController } from './file/file.controller';
 import { FileService } from './file/file.service';
 import { MulterModule } from '@nestjs/platform-express';
 import { diskStorage } from 'multer';
+import { join } from 'path';
 
 // import { ServeStaticModule } from '@nestjs/serve-static';
 // import { join } from 'path';
@@ -22,7 +23,7 @@ import { diskStorage } from 'multer';
     // }),
     MulterModule.register({
     storage: diskStorage({
-      destination: './uploads',
+      destination: join(__dirname, '.', '/static/uploads'),
       filename: (req, file, cb) => {
         const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
         const newFilename = `${uniqueSuffix}-${file.originalname}`;
